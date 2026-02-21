@@ -207,6 +207,14 @@ p { color: var(--gray-600); }
 .announce-bar { background: var(--green-600); color: white; text-align: center; padding: 10px 20px; font-size: 0.825rem; font-weight: 600; }
 .announce-bar a { color: var(--green-100); text-decoration: underline; }
 
+/* ===== STEAM GRID ===== */
+.steam-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -217,6 +225,8 @@ p { color: var(--gray-600); }
   .ba-pairs { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
+  .steam-grid { grid-template-columns: 1fr; gap: 40px; }
+  .steam-grid > div:last-child { aspect-ratio: 16/9; }
   .section { padding: 56px 0; }
   .nav-links, .nav-cta .btn { display: none; }
   .nav-phone { font-size: 0.85rem; }

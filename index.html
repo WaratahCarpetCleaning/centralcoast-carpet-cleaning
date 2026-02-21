@@ -221,7 +221,7 @@
       </ul>
       <div class="nav-cta">
         <a href="tel:0420828734" class="nav-phone" aria-label="Call us">📞 0420 828 734</a>
-        <a href="#quote" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;">Get Instant Quote</a>
+        <a href="#quote" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;" onclick="openWidget(); return false;">Get Instant Quote</a>
       </div>
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -234,7 +234,7 @@
       <a href="#areas" role="menuitem">Service Areas</a>
       <a href="#faq" role="menuitem">FAQ</a>
       <a href="tel:0420828734" role="menuitem" style="color:#16a34a;">📞 0420 828 734</a>
-      <a href="#quote" role="menuitem" class="btn btn-primary" style="justify-content:center;margin-top:8px;">Get Instant Quote</a>
+      <a href="#quote" role="menuitem" class="btn btn-primary" style="justify-content:center;margin-top:8px;" onclick="openWidget(); return false;">Get Instant Quote</a>
     </div>
   </nav>
 
@@ -252,7 +252,7 @@
           <strong>15+ years</strong> of professional carpet cleaning across the Central Coast. Eco-friendly, biodegradable products. Safe for your family, your pets, and the planet.
         </p>
         <div class="hero-actions">
-          <a href="#quote" class="btn btn-white btn-lg">
+          <a href="#quote" class="btn btn-white btn-lg" onclick="openWidget(); return false;">
             ⚡ Get an Instant Quote
           </a>
           <a href="tel:0420828734" class="btn btn-outline btn-lg" style="color:white;border-color:rgba(255,255,255,0.5);">
@@ -510,13 +510,13 @@
   <!-- ===== STEAM CLEANING FEATURE ===== -->
   <section style="padding:80px 0;background:var(--green-900);overflow:hidden;" aria-label="Steam cleaning feature">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div class="steam-grid">
         <div>
           <span class="section-label" style="color:var(--green-400);">Professional Equipment</span>
           <h2 style="color:white;margin-bottom:16px;">Industrial-Grade Steam Cleaning Right at Your Door</h2>
           <p style="color:var(--green-200);margin-bottom:20px;line-height:1.8;">We use truck-mounted and portable professional-grade steam extraction equipment — the same standard used by the best carpet cleaners in Australia. This means more power, faster drying, and deeper cleaning than consumer-grade machines can achieve.</p>
           <p style="color:var(--green-200);margin-bottom:32px;line-height:1.8;">Our equipment reaches temperatures that kill dust mites, bacteria and allergens — leaving your carpets genuinely clean, not just surface-clean.</p>
-          <a href="#quote" class="btn btn-white">Get an Instant Quote</a>
+          <a href="#quote" class="btn btn-white" onclick="openWidget(); return false;">Get an Instant Quote</a>
         </div>
         <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);aspect-ratio:3/4;">
           <img src="images/steam-cleaning-central-coast.jpg"
@@ -749,7 +749,7 @@
           qc('init', 'SB-QHUMDQNTZ');
         </script>
       </div>
-      <p style="margin-top:32px;font-size:0.875rem;color:rgba(255,255,255,0.5);">Or call us directly: <a href="tel:0420828734" style="color:white;font-weight:700;">0420 828 734</a> &nbsp;|&nbsp; <a href="tel:0468000796" style="color:white;font-weight:700;">0468 000 796</a></p>
+      <p style="margin-top:32px;font-size:0.875rem;color:rgba(255,255,255,0.5);">Or call us directly: <a href="tel:0420828734" style="color:white;font-weight:700;">0420 828 734</a></p>
     </div>
   </section>
 
@@ -785,9 +785,6 @@
             <span>📞</span> <a href="tel:0420828734">0420 828 734</a>
           </div>
           <div class="footer-contact-item">
-            <span>📞</span> <a href="tel:0468000796">0468 000 796</a>
-          </div>
-          <div class="footer-contact-item">
             <span>✉️</span> <a href="mailto:waratahcarpetcleaning@gmail.com">waratahcarpetcleaning@gmail.com</a>
           </div>
           <div class="footer-contact-item">
@@ -809,6 +806,15 @@
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
+    // Open SparkQuote widget bubble
+    function openWidget() {
+      if (typeof window.qc === 'function') {
+        window.qc('open');
+      } else {
+        document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
     // Nav scroll shadow
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
