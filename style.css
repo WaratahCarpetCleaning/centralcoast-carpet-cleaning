@@ -74,7 +74,7 @@ p { color: var(--gray-600); }
 .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--gray-600); transition: color 0.2s; }
 .nav-links a:hover { color: var(--green-600); }
 .nav-cta { display: flex; align-items: center; gap: 12px; }
-.nav-phone { font-weight: 700; color: var(--green-700); font-size: 0.9rem; }
+.nav-phone { font-weight: 700; color: var(--green-700); font-size: 0.9rem; white-space: nowrap; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .nav-hamburger span { width: 24px; height: 2px; background: var(--gray-700); border-radius: 2px; transition: all 0.3s; display: block; }
 .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--gray-100); padding: 20px; z-index: 999; flex-direction: column; gap: 16px; box-shadow: var(--shadow-md); }
@@ -202,6 +202,13 @@ p { color: var(--gray-600); }
 .footer-bottom p { font-size: 0.8rem; color: var(--gray-500); margin: 0; }
 .footer-assoc { font-size: 0.75rem; color: var(--gray-500); text-align: right; }
 .footer-assoc a { color: var(--green-400); }
+
+/* ===== TERMS & CONDITIONS ===== */
+.terms-content { max-width: 800px; margin: 40px auto 0; }
+.terms-content ol { list-style: decimal; padding-left: 24px; display: grid; gap: 16px; }
+.terms-content li { font-size: 0.9rem; color: var(--gray-600); line-height: 1.75; }
+.terms-content li strong { color: var(--gray-900); }
+.terms-updated { text-align: center; margin-top: 32px; font-size: 0.8rem; color: var(--gray-400); font-style: italic; }
 
 /* ===== ANNOUNCEMENT BAR ===== */
 .announce-bar { background: var(--green-600); color: white; text-align: center; padding: 10px 20px; font-size: 0.825rem; font-weight: 600; }
